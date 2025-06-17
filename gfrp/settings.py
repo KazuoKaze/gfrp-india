@@ -31,12 +31,13 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # ✅ Allowed Hosts
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='trish-backend.onrender.com,trishelite.com,localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
 
-ALLOWED_HOSTS = ['gfrp-india.onrender.com', 'gfrp-india.web.app', '127.0.0.1', 'localhost:3000']
+ALLOWED_HOSTS = ['gfrp-india.onrender.com', 'gfrp-india.web.app', 'gfrp-india-fron-4qur.vercel.app', '127.0.0.1', 'localhost:3000']
 
 # ✅ CORS Configuration
 CORS_ALLOW_ALL_ORIGINS = False  # Disable wildcard
 CORS_ALLOWED_ORIGINS = [
     "https://gfrp-india.onrender.com",
+    "https://gfrp-india-fron-4qur.vercel.app",
     "https://gfrp-india.web.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -59,6 +60,7 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://gfrp-india.onrender.com",
     "https://gfrp-india.web.app",
+    "https://gfrp-india-fron-4qur.vercel.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8000",  # Add this for Django Admin
