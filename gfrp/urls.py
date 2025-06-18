@@ -31,6 +31,8 @@ import blog.urls as blog_urls
 
 import contact.urls as contact_url
 
+import about.urls as about_url
+
 def health_check(request):
     return JsonResponse({"status": "healthy"})
 
@@ -54,6 +56,7 @@ urlpatterns = [
     path('api/', include(resources_urls)),
     path('api/', include(blog_urls)),
     path('api/', include(contact_url)),
+    path('api/', include(about_url)),
     path('health/', health_check, name='health_check'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
