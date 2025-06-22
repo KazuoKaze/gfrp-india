@@ -230,3 +230,170 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+
+UNFOLD = {
+    "SITE_TITLE": "GFRP INDIA ADMIN",
+    "SITE_HEADER": "GFRP INDIA",
+    "SITE_SUBHEADER": "Admin Panel",
+    "SITE_URL": "/admin/",
+
+    "THEME": "dark",
+
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": False,
+        "navigation": [
+            {
+                "title": _("Homepage"),
+                "icon": "home",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Hero Section",
+                        "link": reverse_lazy("admin:homePage_herosection_changelist"),
+                    },
+                    {
+                        "title": "About Section",
+                        "link": reverse_lazy("admin:homePage_aboutsection_changelist"),
+                    },
+                    {
+                        "title": "How To Start Section",
+                        "link": reverse_lazy("admin:homePage_howtostartsection_changelist"),
+                    },
+                    {
+                        "title": "Subsection of How To Start",
+                        "link": reverse_lazy("admin:homePage_subsectionofhowtostart_changelist"),
+                    },
+                    {
+                        "title": "Single Production",
+                        "link": reverse_lazy("admin:homePage_singleproduction_changelist"),
+                    },
+                    {
+                        "title": "Single Production Section",
+                        "link": reverse_lazy("admin:homePage_singleproductionsection_changelist"),
+                    },
+                    {
+                        "title": "Production Section",
+                        "link": reverse_lazy("admin:homePage_productionsection_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("About Page"),
+                "icon": "info",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Hero Section",
+                        "link": reverse_lazy("admin:about_aboutherosection_changelist"),
+                    },
+                    {
+                        "title": "Our Story",
+                        "link": reverse_lazy("admin:about_aboutourstorysection_changelist"),
+                    },
+                    {
+                        "title": "Value Section",
+                        "link": reverse_lazy("admin:about_aboutvalues_changelist"),
+                    },
+                    {
+                        "title": "Why Section",
+                        "link": reverse_lazy("admin:about_wholewhysection_changelist"),
+                    },
+                    {
+                        "title": "Single Why",
+                        "link": reverse_lazy("admin:about_aboutsinglewhy_changelist"),
+                    },
+                    {
+                        "title": "Hero Images",
+                        "link": reverse_lazy("admin:about_heroimage_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Blog"),
+                "icon": "article",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Blogs",
+                        "link": reverse_lazy("admin:blog_blog_changelist"),
+                    },
+                    {
+                        "title": "Authors",
+                        "link": reverse_lazy("admin:blog_author_changelist"),
+                    },
+                    {
+                        "title": "Blog Page",
+                        "link": reverse_lazy("admin:blog_blogpage_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Contact Page"),
+                "icon": "contact_page",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Contact Info",
+                        "link": reverse_lazy("admin:contact_contactpage_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Products"),
+                "icon": "shopping_bag",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Product Page",
+                        "link": reverse_lazy("admin:product_productpage_changelist"),
+                    },
+                    {
+                        "title": "Single Product",
+                        "link": reverse_lazy("admin:product_singleproduct_changelist"),
+                    },
+                    {
+                        "title": "Single Product Section",
+                        "link": reverse_lazy("admin:product_singleproductsection_changelist"),
+                    },
+                    {
+                        "title": "Applications",
+                        "link": reverse_lazy("admin:product_application_changelist"),
+                    },
+                    {
+                        "title": "Carousel Images",
+                        "link": reverse_lazy("admin:product_carouselimage_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Resources"),
+                "icon": "folder",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Resources Page",
+                        "link": reverse_lazy("admin:resources_resourcespage_changelist"),
+                    },
+                    {
+                        "title": "Technical Resource",
+                        "link": reverse_lazy("admin:resources_technicalresources_changelist"),
+                    },
+                    {
+                        "title": "Technical Resource Section",
+                        "link": reverse_lazy("admin:resources_technicalresourcesection_changelist"),
+                    },
+                ],
+            },
+        ],
+    },
+
+
+
+}
+
+
