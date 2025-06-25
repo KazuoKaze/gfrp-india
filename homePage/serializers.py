@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import HeroSection, AboutSection, SubSectionOfHowToStart, HowToStartSection, SingleProductionSection, SingleProduction, ProductionSection
+from .models import HeroSection, AboutSection, SubSectionOfHowToStart, HowToStartSection, SingleProductionSection, SingleProduction, ProductionSection, FAQSection, NewsLetter
 
 
 class HeroSectionSerializer(serializers.ModelSerializer):   
@@ -9,6 +9,16 @@ class HeroSectionSerializer(serializers.ModelSerializer):
         fields = ['uuid', 'small_title', 'title', 'description', 'image']
 
 
+class FaqSectionSerializer(serializers.ModelSerializer):   
+    class Meta:
+        model = FAQSection
+        fields = ['uuid', 'question', 'answer']
+
+
+class NewsLetterSectionSerializer(serializers.ModelSerializer):   
+    class Meta:
+        model = NewsLetter
+        fields = ['uuid', 'email']
 
 class AboutSectionSerializer(serializers.ModelSerializer):
     class Meta:

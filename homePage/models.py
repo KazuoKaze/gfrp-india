@@ -121,3 +121,26 @@ class ProductionSection(BaseModel):
         verbose_name_plural = "Whole Production Sections"
 
 
+class FAQSection(BaseModel):
+    question = models.CharField(max_length=2555, blank=True, null=True)
+    answer = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"FAQ {self.question}"
+
+    class Meta:
+        verbose_name = "Faq section"
+        verbose_name_plural = "Faq sections"
+
+
+class NewsLetter(BaseModel):
+    email = models.EmailField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Email -  {self.email}"
+
+    class Meta:
+        verbose_name = "Newsletter"
+        verbose_name_plural = "Newsletters"

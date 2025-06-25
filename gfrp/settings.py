@@ -280,6 +280,14 @@ UNFOLD = {
                         "title": "Production Section",
                         "link": reverse_lazy("admin:homePage_productionsection_changelist"),
                     },
+                    {
+                        "title": "FAQ Section",
+                        "link": reverse_lazy("admin:homePage_faqsection_changelist"),
+                    },
+                    {
+                        "title": "Newsletter",
+                        "link": reverse_lazy("admin:homePage_newsletter_changelist"),
+                    },
                 ],
             },
             {
@@ -340,6 +348,10 @@ UNFOLD = {
                     {
                         "title": "Contact Info",
                         "link": reverse_lazy("admin:contact_contactpage_changelist"),
+                    },
+                    {
+                        "title": "Contact Form",
+                        "link": reverse_lazy("admin:contact_contactform_changelist"),
                     },
                 ],
             },

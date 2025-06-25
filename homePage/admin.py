@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from unfold.admin import ModelAdmin, TabularInline
 
-from .models import HeroSection, AboutSection, SubSectionOfHowToStart, HowToStartSection, SingleProductionSection, SingleProduction, ProductionSection
+from .models import HeroSection, AboutSection, SubSectionOfHowToStart, HowToStartSection, SingleProductionSection, SingleProduction, ProductionSection, FAQSection, NewsLetter
 
 # @admin.register(AboutSection)
 
@@ -48,4 +48,12 @@ class SingleProductionSectionAdmin(ModelAdmin):
 
 @admin.register(ProductionSection)
 class ProductionSectionAdmin(ModelAdmin):
+    show_in_sidebar = False
+
+@admin.register(FAQSection)
+class FAQSectionAdmin(ModelAdmin):
+    show_in_sidebar = False
+
+@admin.register(NewsLetter)
+class NewsletterSectionAdmin(ModelAdmin):
     show_in_sidebar = False
