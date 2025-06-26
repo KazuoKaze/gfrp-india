@@ -9,6 +9,7 @@ from django.utils.text import slugify
 from homePage.models import BaseModel
 
 class CarouselImage(BaseModel): 
+    title = models.CharField(max_length=2555, blank=True, null=True)
     image = models.ImageField(upload_to='carousel_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -16,8 +17,8 @@ class CarouselImage(BaseModel):
         return f"CarouselImage {self.uuid}"
 
     class Meta:
-        verbose_name = "Product Carousel Image"
-        verbose_name_plural = "Product Carousel Images"
+        verbose_name = "Product Image"
+        verbose_name_plural = "Product Images"
 
 class Application(BaseModel):
     title = models.CharField(max_length=2555, blank=True, null=True)
@@ -38,8 +39,7 @@ class SingleProduct(BaseModel):
     description = RichTextField(blank=True, null=True)
     tag = models.CharField(max_length=2555, blank=True, null=True)
     application = models.ManyToManyField(Application, related_name='single_products', blank=True, null=True)
-    image = models.ManyToManyField(CarouselImage, related_name='single_products')
-
+    image = models.ImageField(upload_to='single_product/', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -58,7 +58,7 @@ class SingleProductSection(BaseModel):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"SingleProductSection {self.uuid} - {self.title}"
+        return f"SingleProductSection - {self.title}"
 
     class Meta:
         verbose_name = "Single Product Section"
@@ -73,7 +73,7 @@ class ProductPage(BaseModel):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"ProductPage {self.uuid} - {self.title}"
+        return f"ProductPage - {self.title}"
 
     class Meta:
         verbose_name = "Product Page"

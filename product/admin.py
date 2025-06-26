@@ -5,7 +5,7 @@ from unfold.admin import ModelAdmin, TabularInline
 
 from .models import CarouselImage, Application, SingleProduct, SingleProductSection, ProductPage
 
-@admin.register(CarouselImage)
+# @admin.register(CarouselImage)
 @admin.register(Application)
 @admin.register(SingleProduct)
 @admin.register(SingleProductSection)

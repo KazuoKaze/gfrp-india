@@ -16,7 +16,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
 class SingleProductSerializer(serializers.ModelSerializer):
     application = ApplicationSerializer(many=True, read_only=True)
-    image = CarouselImageSerializer(many=True, read_only=True)
+    # image = CarouselImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = SingleProduct

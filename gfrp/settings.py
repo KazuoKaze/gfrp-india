@@ -376,10 +376,10 @@ UNFOLD = {
                         "title": "Applications",
                         "link": reverse_lazy("admin:product_application_changelist"),
                     },
-                    {
-                        "title": "Carousel Images",
-                        "link": reverse_lazy("admin:product_carouselimage_changelist"),
-                    },
+                    # {
+                    #     "title": "Product Images",
+                    #     "link": reverse_lazy("admin:product_carouselimage_changelist"),
+                    # },
                 ],
             },
             {
@@ -409,3 +409,11 @@ UNFOLD = {
 }
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'cvplindore@gmail.com'          # Your Gmail
+EMAIL_HOST_PASSWORD = 'bactoafxzhniigwm'    # Use App Password, not Gmail password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

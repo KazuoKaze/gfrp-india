@@ -38,7 +38,7 @@ class ContactForm(BaseModel):
 
     phone = models.CharField(max_length=2555, blank=True, null=True)
     email_address = models.EmailField()
-    machine = models.CharField(max_length=2555, blank=True, null=True)
+    city = models.CharField(max_length=2555, blank=True, null=True)
     message = models.TextField()
     
     created_at = models.DateTimeField(auto_now_add=True)
